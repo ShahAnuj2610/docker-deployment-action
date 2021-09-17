@@ -96,7 +96,7 @@ if ! [ -z "$INPUT_COPY_STACK_FILE" ] && [ $INPUT_COPY_STACK_FILE = 'true' ] ; th
       -o UserKnownHostsFile=/dev/null \
       -o StrictHostKeyChecking=no \
       -P $INPUT_REMOTE_DOCKER_PORT \
-      . "$INPUT_REMOTE_DOCKER_HOST:$INPUT_DEPLOY_PATH"
+      -r . "$INPUT_REMOTE_DOCKER_HOST:$INPUT_DEPLOY_PATH"
 
   scp -i "$HOME/.ssh/id_rsa" \
       -o UserKnownHostsFile=/dev/null \
